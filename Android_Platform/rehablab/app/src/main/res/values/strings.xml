@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">RehabLab</string>
+    <string name="start">Start</string>
+    <string name="leg_flexion">Leg Flexion</string>
+    <string name="arm_flexion">Arm Flexion</string>
+    <string name="head_rotation">Head Rotation</string>
+    <string name="back">Back</string>
+    <string name="stp1">Step 1: Location</string>
+    <string name="stp2">Step 2: Orientation</string>
+    <string name="stp3">Step 3: Secure</string>
+    <string name="txt1">Place sensor immediately below knee joint</string>
+    <string name="txt2">Ensure the sensor is facing upwards with LED light visible</string>
+    <string name="txt3">Strap the sensor firmly but comfortably to prevent movement</string>
+</resources>

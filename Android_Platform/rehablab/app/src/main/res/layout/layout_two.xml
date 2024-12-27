@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sensor Placement Guide"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Image Frame -->
+    <FrameLayout
+        android:id="@+id/imageFrame"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@id/titleText"
+        android:layout_above="@id/layoutOne"
+        android:layout_marginBottom="20dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="@android:color/darker_gray">
+
+        <ImageView
+            android:id="@+id/sensorImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:padding="1dp"
+            android:background="@android:color/white"
+            android:src="@drawable/legguidance"/>
+    </FrameLayout>
+
+    <!-- option 1 -->
+    <LinearLayout
+        android:id="@+id/layoutOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:layout_above="@+id/layoutTwo"
+        android:gravity="center_vertical"
+        android:padding="8dp"
+        android:background="@drawable/bg_round_layouts">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#4F89CB"
+            android:text="@string/stp1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_marginTop="8dp"
+            android:text="@string/txt1"/>
+    </LinearLayout>
+
+    <!-- option 2 -->
+    <LinearLayout
+        android:id="@+id/layoutTwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_round_layouts2"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/stp2"
+            android:textColor="#628C5F" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/txt2"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <!-- option 3 -->
+
+    <LinearLayout
+        android:id="@+id/layoutThree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutTwo"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:layout_marginTop="20dp"
+        android:padding="8dp"
+        android:background="@drawable/bg_round_layouts3">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#DF9254"
+            android:text="@string/stp3"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_marginTop="8dp"
+            android:text="@string/txt3"/>
+    </LinearLayout>
+
+    <!-- Add this before the back button -->
+    <Button
+        android:id="@+id/buttonToAngle"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_below="@id/layoutThree"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="130dp"
+        android:text="Next"
+        android:minWidth="120dp"
+        android:textAllCaps="false"
+        style="@style/Widget.MaterialComponents.Button"
+        android:backgroundTint="#6750A4"
+        android:textColor="@android:color/white"/>
+
+    <!-- Update the back button to be below the new button -->
+    <Button
+        android:id="@+id/buttonBackToMain"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_below="@id/layoutThree"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp"
+        android:text="@string/back"
+        android:minWidth="120dp"
+        android:textAllCaps="false"
+        style="@style/Widget.MaterialComponents.Button"
+        android:backgroundTint="#6750A4"
+        android:textColor="@android:color/white"/>
+
+</RelativeLayout>

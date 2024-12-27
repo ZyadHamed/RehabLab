@@ -1,0 +1,265 @@
+﻿<Window x:Class="RehabLab.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RehabLab"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="1200">
+    <Grid>
+        <TabControl Background="Transparent" BorderThickness="0">
+            <TabControl.Resources>
+                <Style TargetType="TabItem">
+                    <Setter Property="Foreground" Value="#808080"/>
+                    <!-- Default gray color -->
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="TabItem">
+                                <Border Name="Border" 
+                                Margin="5,0,5,0" 
+                                Padding="15,5"
+                                HorizontalAlignment="Stretch">
+                                    <ContentPresenter x:Name="ContentSite"
+                                            VerticalAlignment="Center"
+                                            HorizontalAlignment="Stretch"
+                                            ContentSource="Header"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="Border" Property="BorderThickness" Value="0,0,0,2"/>
+                                        <Setter TargetName="Border" Property="BorderBrush" Value="#007BFF"/>
+                                        <Setter Property="Foreground" Value="#007BFF"/>
+                                        <!-- Blue color for selected tab -->
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Foreground" Value="#007BFF"/>
+                                        <!-- Blue color on hover -->
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TabControl.Resources>
+
+            <TabItem Header="Dashboard">
+                
+            </TabItem>
+            <TabItem Header="Course Selection">
+                <Grid Margin="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <!-- Box 1 - Arm Flextion -->
+                    <Border CornerRadius="15" Background="#1DB9B3" Margin="0,5,0,15" Grid.Row="0">
+                        <Grid Margin="20">
+                            <Grid.ColumnDefinitions>
+                                <!-- Left column for image -->
+                                <ColumnDefinition Width="0.15*"/>
+                                <!-- Center column for text -->
+                                <ColumnDefinition Width="0.55*"/>
+                                <!-- Right column for button -->
+                                <ColumnDefinition Width="0.3*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Left Column - Image -->
+                            <Image Grid.Column="0" 
+               Source="images/arm.png"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"/>
+
+                            <!-- Center Column - Text -->
+                            <StackPanel Grid.Column="1" 
+                    VerticalAlignment="Center">
+                                <TextBlock Text="Arm Flextion" 
+                      Foreground="White"
+                      FontSize="24"
+                      Opacity="0.95"
+                      Margin="0,0,0,5"
+                      FontWeight="Bold"/>
+
+                                <TextBlock Text="Current record: 90% of the way" 
+                      Foreground="White"
+                      FontSize="12"
+                      Opacity="0.7"/>
+                            </StackPanel>
+
+                            <!-- Right Column - Button -->
+                            <Button Grid.Column="2"
+                            Content="Start Course>>"
+                            Height="35"
+                            Margin="10,0,0,0"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Stretch"
+                            Name="btnArmFlextion" Click="btnArmFlextion_Click">
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Background" Value="#FFFFFF"/>
+                                        <Setter Property="Foreground" Value="#1DB9B3"/>
+                                        <Setter Property="BorderThickness" Value="0"/>
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="Button">
+                                                    <Border Background="{TemplateBinding Background}"
+                                        CornerRadius="8">
+                                                        <ContentPresenter HorizontalAlignment="Center" 
+                                                    VerticalAlignment="Center"/>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#E0E0E0"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </Grid>
+                    </Border>
+                    <!-- Box 2 - Leg Flextion -->
+                    <Border CornerRadius="15" Background="#4361EE" Margin="0,5,0,15" Grid.Row="1">
+                        <Grid Margin="20">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.15*"/>
+                                <ColumnDefinition Width="0.55*"/>
+                                <ColumnDefinition Width="0.3*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Left Column - Image -->
+                            <Image Grid.Column="0" 
+               Source="images/legcourse.png"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"/>
+
+                            <!-- Center Column - Text -->
+                            <StackPanel Grid.Column="1" 
+                    VerticalAlignment="Center">
+                                <TextBlock Text="Leg Flextion" 
+                      Foreground="White"
+                      FontSize="24"
+                      Opacity="0.95"
+                      Margin="0,0,0,5"
+                      FontWeight="Bold"/>
+
+                                <TextBlock Text="Current record: 75% of the way" 
+                      Foreground="White"
+                      FontSize="12"
+                      Opacity="0.7"/>
+                            </StackPanel>
+
+                            <!-- Right Column - Button -->
+                            <Button Grid.Column="2"
+                Content="Start Course>>"
+                Height="35"
+                Margin="10,0,0,0"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Stretch"
+                Name="btnLegFlextion" Click="btnLegFlextion_Click">
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Background" Value="#FFFFFF"/>
+                                        <Setter Property="Foreground" Value="#4361EE"/>
+                                        <Setter Property="BorderThickness" Value="0"/>
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="Button">
+                                                    <Border Background="{TemplateBinding Background}"
+                                        CornerRadius="8">
+                                                        <ContentPresenter HorizontalAlignment="Center" 
+                                                    VerticalAlignment="Center"/>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#E0E0E0"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </Grid>
+                    </Border>
+
+                    <!-- Box 3 - Head Rotation -->
+                    <Border CornerRadius="15" Background="#7209B7" Margin="0,5,0,15" Grid.Row="2">
+                        <Grid Margin="20">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.15*"/>
+                                <ColumnDefinition Width="0.55*"/>
+                                <ColumnDefinition Width="0.3*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Left Column - Image -->
+                            <Image Grid.Column="0" 
+               Source="images/neck.png"
+
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"/>
+
+                            <!-- Center Column - Text -->
+                            <StackPanel Grid.Column="1" 
+                    VerticalAlignment="Center">
+                                <TextBlock Text="Head Rotation" 
+                      Foreground="White"
+                      FontSize="24"
+                      Opacity="0.95"
+                      Margin="0,0,0,5"
+                      FontWeight="Bold"/>
+
+                                <TextBlock Text="Current record: 60% of the way" 
+                      Foreground="White"
+                      FontSize="12"
+                      Opacity="0.7"/>
+                            </StackPanel>
+
+                            <!-- Right Column - Button -->
+                            <Button Grid.Column="2"
+                Content="Start Course>>"
+                Height="35"
+                Margin="10,0,0,0"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Stretch"
+                Name="btnHeadRotation" Click="btnHeadRotation_Click">
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Background" Value="#FFFFFF"/>
+                                        <Setter Property="Foreground" Value="#7209B7"/>
+                                        <Setter Property="BorderThickness" Value="0"/>
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="Button">
+                                                    <Border Background="{TemplateBinding Background}"
+                                        CornerRadius="8">
+                                                        <ContentPresenter HorizontalAlignment="Center" 
+                                                    VerticalAlignment="Center"/>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#E0E0E0"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Your Progress">
+                
+            </TabItem>
+            <TabItem Header="Settings">
+                
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

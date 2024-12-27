@@ -1,0 +1,144 @@
+﻿<Window x:Class="RehabLab.GuidanceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RehabLab"
+        mc:Ignorable="d"
+        Title="GuidanceWindow" Height="800" Width="1200">
+    <Grid Margin="30" Loaded="Grid_Loaded">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title -->
+        <TextBlock Grid.Row="0"
+                   Text="Sensor Placement Guide"
+                   FontSize="32"
+                   FontWeight="Light"
+                   Foreground="#2C3E50"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,20"/>
+
+        <!-- Main Content Card -->
+        <Border Grid.Row="1"
+                Background="White"
+                CornerRadius="15">
+
+            <Grid Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Image Section -->
+                <Border Grid.Column="0"
+                        Margin="10"
+                        CornerRadius="10"
+                        BorderThickness="2"
+                        BorderBrush="#E0E0E0">
+                    <Image Source="images/handGuidance.jpg"
+                           Stretch="Uniform"
+                           Margin="10"
+                           Name="imgGuidance"/>
+                </Border>
+
+                <!-- Instructions Section -->
+                <StackPanel Grid.Column="1"
+                           Margin="20,10,10,10"
+                           VerticalAlignment="Center">
+
+                    <!-- Step 1 -->
+                    <Border Background="#E3F2FD"
+                            CornerRadius="8"
+                            Padding="15,10"
+                            Margin="0,0,0,15">
+                        <StackPanel>
+                            <TextBlock Text="Step 1: Location"
+                                     FontSize="18"
+                                     FontWeight="SemiBold"
+                                     Foreground="#1976D2"/>
+                            <TextBlock Text="Place the sensor immediately after the elbow joint"
+                                     TextWrapping="Wrap"
+                                     Margin="0,5,0,0"
+                                     Foreground="#2C3E50"
+                                       Name="lbInstructions"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Step 2 -->
+                    <Border Background="#E8F5E9"
+                            CornerRadius="8"
+                            Padding="15,10"
+                            Margin="0,0,0,15">
+                        <StackPanel>
+                            <TextBlock Text="Step 2: Orientation"
+                                     FontSize="18"
+                                     FontWeight="SemiBold"
+                                     Foreground="#388E3C"/>
+                            <TextBlock Text="Ensure the sensor is facing upward with the LED light visible"
+                                     TextWrapping="Wrap"
+                                     Margin="0,5,0,0"
+                                     Foreground="#2C3E50"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Step 3 -->
+                    <Border Background="#FFF3E0"
+                            CornerRadius="8"
+                            Padding="15,10">
+                        <StackPanel>
+                            <TextBlock Text="Step 3: Secure"
+                                     FontSize="18"
+                                     FontWeight="SemiBold"
+                                     Foreground="#F57C00"/>
+                            <TextBlock Text="Strap the sensor firmly but comfortably to prevent movement"
+                                     TextWrapping="Wrap"
+                                     Margin="0,5,0,0"
+                                     Foreground="#2C3E50"/>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Important Note -->
+        <TextBlock Grid.Row="2"
+                   Text="Important: Make sure the sensor is securely fastened before starting measurements"
+                   Foreground="#E53935"
+                   FontStyle="Italic"
+                   HorizontalAlignment="Center"
+                   Margin="0,20,0,20"/>
+
+        <!-- Done Button -->
+        <Button Grid.Row="3"
+                Content="I've Placed the Sensor Correctly"
+                Height="50"
+                Width="300"
+                Background="#4CAF50"
+                Foreground="White"
+                FontSize="16"
+                FontWeight="SemiBold"
+                BorderThickness="0"
+                Name="btnDone"
+                Click="btnDone_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="25"/>
+                </Style>
+            </Button.Resources>
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#388E3C"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+    </Grid>
+</Window>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- Title -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- option 1 -->
+    <LinearLayout
+        android:id="@+id/layoutOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal"
+        android:layout_above="@+id/layoutTwo"
+        android:gravity="center_vertical"
+        android:padding="8dp"
+        android:background="@drawable/rounded_corner_background">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/arm_flexion" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:text="@string/arm_flexion"/>
+
+        <Button
+            android:id="@+id/buttonLayoutOne"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="@string/start"
+            android:minWidth="120dp"
+            android:textAllCaps="false"
+            style="@style/Widget.MaterialComponents.Button"
+            android:backgroundTint="@color/white"
+            android:textColor="@android:color/black"/>
+    </LinearLayout>
+
+    <!-- option 2 -->
+    <LinearLayout
+        android:id="@+id/layoutTwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="20dp"
+        android:padding="8dp"
+        android:background="@drawable/rounded_corner_background2">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/leg_flexion" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:text="@string/leg_flexion"/>
+
+        <Button
+            android:id="@+id/buttonLayoutTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="@string/start"
+            android:minWidth="120dp"
+            android:textAllCaps="false"
+            style="@style/Widget.MaterialComponents.Button"
+            android:backgroundTint="@color/white"
+            android:textColor="@android:color/black"/>
+    </LinearLayout>
+
+    <!-- option 3 -->
+    <LinearLayout
+        android:id="@+id/layoutThree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutTwo"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="20dp"
+        android:padding="8dp"
+        android:background="@drawable/rounded_corner_background3">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/head_rotation" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:text="@string/head_rotation"/>
+
+        <Button
+            android:id="@+id/buttonLayoutThree"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="@string/start"
+            android:minWidth="120dp"
+            android:textAllCaps="false"
+            style="@style/Widget.MaterialComponents.Button"
+            android:backgroundTint="@color/white"
+            android:textColor="@android:color/black"/>
+    </LinearLayout>
+
+</RelativeLayout>

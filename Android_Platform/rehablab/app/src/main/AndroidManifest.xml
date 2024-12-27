@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.rehablab.rehablab"> <!-- تأكد من أن هذا هو نفس اسم الباكيج في مشروعك -->
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.MyApplication">
+
+        <!-- MainActivity (النشاط الرئيسي) -->
+        <activity android:name="com.rehablab.rehablab.MainActivity"
+            android:exported="true">  <!-- تعيين android:exported إلى true لأن MainActivity هي Activity بداية التشغيل -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- LayoutOneActivity (الواجهة الأولى) -->
+        <activity android:name="com.rehablab.rehablab.LayoutOneActivity"
+            android:exported="true" /> <!-- تعيين android:exported إلى true إن كانت هذه الأنشطة متاحة للتفاعل مع التطبيقات الأخرى -->
+
+        <!-- LayoutTwoActivity (الواجهة الثانية) -->
+        <activity android:name="com.rehablab.rehablab.LayoutTwoActivity"
+            android:exported="true" />
+
+        <!-- LayoutThreeActivity (الواجهة الثالثة) -->
+        <activity android:name="com.rehablab.rehablab.LayoutThreeActivity"
+            android:exported="true" />
+
+        <activity android:name="com.rehablab.rehablab.AngleActivity1" android:exported="true"/>
+        <activity android:name="com.rehablab.rehablab.AngleActivity2" android:exported="true"/>
+        <activity android:name="com.rehablab.rehablab.AngleActivity3" android:exported="true"/>
+
+    </application>
+
+</manifest>

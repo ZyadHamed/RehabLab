@@ -1,0 +1,59 @@
+﻿<Window x:Class="RehabLab.MonitorAngleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RehabLab"
+        mc:Ignorable="d"
+        Title="MonitorAngleWindow" Height="450" Width="800">
+    <Grid Loaded="Grid_Loaded">
+        <Border Background="White"
+                CornerRadius="20"
+                Margin="20"
+                >
+
+            <StackPanel VerticalAlignment="Center" 
+                        HorizontalAlignment="Center">
+
+                <!-- Main Angle Display -->
+                <TextBlock x:Name="AngleDisplay"
+                         Text="0°"
+                         FontSize="72"
+                         FontWeight="Light"
+                         HorizontalAlignment="Center"/>
+
+                <!-- Angle Description -->
+                <TextBlock x:Name="AngleDescription"
+                         Text="Current Angle"
+                         FontSize="24"
+                         Foreground="#666666"
+                         HorizontalAlignment="Center"/>
+
+                <!-- Status Display -->
+                <Border x:Name="StatusBorder"
+                        Width="200"
+                        Height="40"
+                        CornerRadius="20"
+                        Background="#4CAF50"
+                        Margin="0,20,0,0">
+
+                    <TextBlock x:Name="StatusText"
+                             Text="GOOD"
+                             Foreground="White"
+                             FontSize="20"
+                             FontWeight="SemiBold"
+                             HorizontalAlignment="Center"
+                             VerticalAlignment="Center"/>
+                </Border>
+
+                <!-- Range Information -->
+                <TextBlock
+                         Text="Acceptable Range: 10.5° - 95.6°"
+                         FontSize="16"
+                         Foreground="#999999"
+                         HorizontalAlignment="Center"
+                         Margin="0,10,0,0" Name="lbAcceptableRange"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
